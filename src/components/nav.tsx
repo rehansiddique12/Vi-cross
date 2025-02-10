@@ -7,6 +7,7 @@ import { IoHomeOutline } from "react-icons/io5";
 import { AiOutlineSolution } from "react-icons/ai";
 import { MdOutlinePermContactCalendar } from "react-icons/md";
 import { useEffect } from "react";
+import { navbarLinks } from "../constants/constants";
 
 const Nav = () => {
   useEffect(() => {
@@ -18,19 +19,19 @@ const Nav = () => {
       <div className="mx-auto flex h-full w-full items-center justify-between xl:max-w-screen-2xl">
         <img src={logo} alt="Logo" className="mt-3 mb-4" />
 
-        <div className="hidden lg:flex px-10 gap-4 items-end ">
-          <Link to="/" className="text-[#2E2460] hover:text-white hover:bg-[#2E2460] px-4 py-2 rounded-xl drop-shadow-xl duration-500 ">
-            Home
-          </Link>
-          <Link to="/aboutus" className="text-[#2E2460] hover:text-white hover:bg-[#2E2460] px-4 py-2 rounded-xl drop-shadow-xl duration-500 ">
-            About Us
-          </Link>
-          <Link to="/solution" className="text-[#2E2460] hover:text-white hover:bg-[#2E2460] px-4 py-2 rounded-xl drop-shadow-xl duration-500 ">
-          Our Solution</Link>
-          <Link to="/contactus" className="text-[#2E2460] hover:text-white hover:bg-[#2E2460] px-4 py-2 rounded-xl drop-shadow-xl duration-500 ">
-            Contact Us
-          </Link>
-        </div>
+        <div className="hidden lg:flex px-10 gap-4 items-end">
+      {navbarLinks.map((p) => (
+        <Link
+          key={p.id}
+          to={p.path}
+          className={`text-[#2E2460] hover:text-white hover:bg-[#2E2460] px-4 py-2 rounded-xl drop-shadow-xl duration-500 relative ${
+            location.pathname === p.path ? "border-b-4 border-[#2E2460]" : ""
+          }`}
+        >
+          {p.title}
+        </Link>
+      ))}
+    </div>
 
         <div className="hidden lg:flex justify-items-end gap-4">
           <button className="bg-[#2E2460] text-white hover:bg-white hover:text-[#2E2460] border border-[#2E2460] py-2 px-8 rounded-xl drop-shadow-xl duration-500 ">
@@ -69,12 +70,12 @@ const Nav = () => {
               to={"/solution"}
               className="text-[#2E2460] hover:text-[#2E2460] flex gap-2 items-center font-semibold text-xl "
             >
-              <FaPersonBooth  className="size-6 hover:text-[#2E2460]" />
-              Our Solution 
+              <FaPersonBooth className="size-6 hover:text-[#2E2460]" />
+              Our Solution
             </Link>
             <div className=" w-full border border-gray-300 h-0.5 items-center justify-center"></div>
             <Link
-            to={"/contactus"}
+              to={"/contactus"}
               className="text-[#2E2460] hover:text-[#2E2460] flex gap-2 items-center font-semibold text-xl"
             >
               <MdOutlinePermContactCalendar className="size-6 hhover:text-[#2E2460]" />
@@ -90,7 +91,6 @@ const Nav = () => {
               >
                 Join
               </Link>
-              
             </div>
           </div>
         </div>
@@ -100,4 +100,15 @@ const Nav = () => {
 };
 
 export default Nav;
-{/* <div className="bg-[#2E2460] hidden group-hover:flex justify-center items-center rounded-full size-2"></div> */}
+{
+  /* <div className="bg-[#2E2460] hidden group-hover:flex justify-center items-center rounded-full size-2"></div> */
+}
+
+ //  <Link to="/aboutus" className="text-[#2E2460] hover:text-white hover:bg-[#2E2460] px-4 py-2 rounded-xl drop-shadow-xl duration-500 ">
+            //    About Us
+            //  </Link>
+            //  <Link to="/solution" className="text-[#2E2460] hover:text-white hover:bg-[#2E2460] px-4 py-2 rounded-xl drop-shadow-xl duration-500 ">
+            //  Our Solution</Link>
+            //  <Link to="/contactus" className="text-[#2E2460] hover:text-white hover:bg-[#2E2460] px-4 py-2 rounded-xl drop-shadow-xl duration-500 ">
+            //    Contact Us
+            //  </Link>
