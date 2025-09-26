@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
-import Logo from "../assets/img/logo.png";
+import Logo from "../assets/img/logo.png"
 import { FaPersonBooth } from "react-icons/fa";
 import { IoHomeOutline } from "react-icons/io5";
 import { AiOutlineSolution } from "react-icons/ai";
