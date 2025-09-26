@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
-import Logo from "../assets/img/logo.png"
+import logo from "../assets/img/logo2.png"
 import { FaPersonBooth } from "react-icons/fa";
 import { IoHomeOutline } from "react-icons/io5";
 import { AiOutlineSolution } from "react-icons/ai";
@@ -17,7 +17,7 @@ const Nav = () => {
   return (
     <nav className="fixed top-0 h-20 w-full backdrop-blur-sm p-5 px-5  lg:px-5 bg-white z-40">
       <div className="mx-auto flex h-full w-full items-center justify-between xl:max-w-screen-2xl">
-        <img src={Logo} alt="Logo" className="mt-3 mb-4" />
+        <img src={logo} alt="Logo" className="mt-3 mb-4" />
 
         <div className="hidden lg:flex px-10 gap-4 items-end">
           {navbarLinks.map((p) => (
